@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>customerdetails</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+body{
+	background: url(booking.jpg) no-repeat;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+	font-family: sans-serif;
+	color: black;
+}
+</style>
+<script src="JJSCIPT.js"></script>
+</head>
+
+<body>
+	<script src="script.js"></script>
+<center>
+
+
+<div class="container"><br>
+	<h1 class="text-success text-center">Book an appointment</h1><br>
+	<h1>WHEN YOU VISIT US</h1>
+<b1>When visiting The Beauty Parlour, we recommend parking on 100 Street, south of Whyte Avenue. There are many free parking options available for you there: angle parking, residential parking, and beside the Church are all free with no time restraints. You also have the convenient option of the parking meters directly on Whyte avenue. But be warned—time expires quickly and tickets are pricey and unnecessary!</b1>
+	<div class="col-lg-8 m auto d block">
+		<form action="confirm.html" onsubmit="return validation()" class="bg-light">
+
+			<div class="form-group">
+				<label>Booking name:</label>
+				<input type="text" name="user"  onkeydown="myfunc(event)" required class="form-control" id="user" autocomplete="off">
+				<span id="username" class="text-danger font-weight-bold"></span>
+			</div>
+
+				<div class="form-group">
+						<label>Booking date:</label>
+						<input type="date" name="pass" onkeydown="myfunc(event)" required  class="form-control" id="bdate" autocomplete="off">
+						<span id="date" class="text-danger font-weight-bold"></span>
+				</div>
+				<div class="form-group">
+						<label>booking time:</label>
+						<input type="time" name="pass"  onkeydown="myfunc(event)" required class="form-control" id="btime" autocomplete="off">
+						<span id="time" class="text-danger font-weight-bold"></span>
+				</div>
+				<div class="form-group">
+						<label>salon name:</label>
+						<input type="text" name="pass" onkeydown="myfunc(event)" required  class="form-control" id="sname" autocomplete="off">
+						<span id="salname" class="text-danger font-weight-bold"></span>
+				</div>
+				<div class="form-group">
+						<label>Service name:</label>
+						<input type="text" name="email" onkeydown="myfunc(event)" required  class="form-control" id="sername" autocomplete="off">
+						<span id="sername" class="text-danger font-weight-bold"></span>
+				</div>
+				
+               <input type="submit" name="submit" value="submit" class="btn btn-success" autocomplete="off">
+</form>
+</div>
+</div>
+<script type="text/javascript">
+	function validation(){
+		var user=document.getElementById('user').value;
+		var pass=document.getElementById('bdate').value;
+		var confirmpass=document.getElementById('btime').value;
+		var mobileNumber=document.getElementById('sname').value;
+		var emails=document.getElementById('sername').value;
+
+
+		if(user == "")
+		{
+			document.getElementById('username').innerHTML= " **Please fill the name field";
+			return false;
+		}
+		if((user.length<= 2 ) || (user.length > 20)){
+			document.getElementById('username').innerHTML= " **user name must be between 2 and 20";
+			return false;
+		}
+		if(!isNaN(user)){
+			document.getElementById('username').innerHTML= " **only characters allowed"
+			return false;
+
+		}
+
+
+		if(sname == "")
+		{
+			document.getElementById('passwords').innerHTML= " **Please fill the available salon field";
+			return false;
+		}
+		
+
+		if(sername == "")
+		{
+			document.getElementById('mobile no').innerHTML= " **Please fill the service number";
+			return false;
+		}
+		
+</script>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/twbs/bootsrap/v4-dev/dist/js.bootsrap.js"></script>
+
+</html>

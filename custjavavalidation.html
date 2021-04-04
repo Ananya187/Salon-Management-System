@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>customerdetails</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+body{
+	background: url(adminpage.jpg) no-repeat;
+	background-size: cover;
+	align-items: left;
+	justify-content: left;
+	font-family: sans-serif;
+	color: black;
+}
+</style>
+<script src="script.js"></script>
+</head>
+
+<body>
+<center>
+
+
+<div class="container"><br>
+	<h1 class="text-success text-center">Customer details</h1><br>
+	<div class="col-lg-8 m auto d block">
+		<form action="signup.php" method="POST" onsubmit="return validation()" class="bg-light">
+
+			<div class="form-group">
+				<label>Userame:</label>
+				<input type="text" name="user"  onkeydown="myfunc(event)" required class="form-control" id="user" autocomplete="off">
+				<span id="username" class="text-danger font-weight-bold"></span>
+			</div>
+
+				<div class="form-group">
+						<label>Password:</label>
+						<input type="password" name="pass" onkeydown="myfunc(event)" required  class="form-control" id="pass" autocomplete="off">
+						<span id="passwords" class="text-danger font-weight-bold"></span>
+				</div>
+				<div class="form-group">
+						<label>Confirm password:</label>
+						<input type="password" name="confirmpass"  onkeydown="myfunc(event)" required class="form-control" id="conpass" autocomplete="off">
+						<span id="confirmpass" class="text-danger font-weight-bold"></span>
+				</div>
+				<div class="form-group">
+						<label>Mobile number:</label>
+						<input type="text" name="phone" onkeydown="myfunc(event)" required  class="form-control" id="mobileNumber" autocomplete="off">
+						<span id="mobile no" class="text-danger font-weight-bold"></span>
+				</div>
+				<div class="form-group">
+						<label>Email:</label>
+						<input type="text" name="email" onkeydown="myfunc(event)" required  class="form-control" id="emails" autocomplete="off">
+						<span id="emailids" class="text-danger font-weight-bold"></span>
+				</div>
+				
+               <input type="submit" name="submit" value="submit" class="btn btn-success" autocomplete="off">
+</form>
+</div>
+</div>
+<script type="text/javascript">
+	function validation(){
+		var user=document.getElementById('user').value;
+		var pass=document.getElementById('pass').value;
+		var confirmpass=document.getElementById('conpass').value;
+		var mobileNumber=document.getElementById('mobileNumber').value;
+		var emails=document.getElementById('emails').value;
+
+
+		if(user == "")
+		{
+			document.getElementById('username').innerHTML= " **Please fill the name field";
+			return false;
+		}
+		if((user.length<= 2 ) || (user.length > 20)){
+			document.getElementById('username').innerHTML= " **user name must be between 2 and 20";
+			return false;
+		}
+		if(!isNaN(user)){
+			document.getElementById('username').innerHTML= " **only characters allowed"
+			return false;
+
+		}
+
+
+		if(pass == "")
+		{
+			document.getElementById('passwords').innerHTML= " **Please fill the password field";
+			return false;
+		}
+		if((pass.length<= 5 ) || (pass.length > 20)){
+			document.getElementById('passwords').innerHTML= " **passwords length must be between 5 and 20";
+			return false;
+		}
+		if(pass!=confirmpass){
+			document.getElementById('passwords').innerHTML= " **password not matched";
+			return false;
+
+		}
+
+		if(confirmpass == "")
+		{
+			document.getElementById('confirmpass').innerHTML= " **Retype the password"
+			return false;
+		}
+
+		if(mobileNumber == "")
+		{
+			document.getElementById('mobile no').innerHTML= " **Please fill the mobile number";
+			return false;
+		}
+		if(isNaN(mobileNumber)){
+			document.getElementById('mobile no').innerHTML= " **only digits allowed";
+			return false;
+		}
+		if(mobileNumber.length!=10){
+			document.getElementById('mobile no').innerHTML= " **mobile no must be 10 digit only";
+			return false;
+		}
+
+		if(emails == "")
+		{
+			document.getElementById('emailids').innerHTML= " **please enter valid email-id"
+			return false;
+		}
+		if(emails.indexOf('@')<= 0){
+			document.getElementById('emailids').innerHTML= " ** @ invalid position";
+			return false;
+		}
+		if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.'))
+		{
+			document.getElementById('emailids').innerHTML= " ** . invalid position";
+			return false;
+		}
+	}
+
+</script>
+</body>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/twbs/bootsrap/v4-dev/dist/js.bootsrap.js"></script> -->
+
+</html>
